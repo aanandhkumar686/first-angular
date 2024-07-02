@@ -2,14 +2,21 @@
 
 <div class="container">
 
-    <label for="uname"><b> username</b> </label>
-    <input type="text" placeholder="Enter Username" name="uname" [(ngModel)]="uname" required>
+  <label> {{ title }} - {{uname}}</label>
+  <img [src]="img_url" />
 
-    <label for="pwr"><b>password</b></label>
-    <input type="password" placeholder="Enter password" name="pwr" [(ngModel)]="pwr" required>
+  <label for="uname"><b> username</b> </label>
+  <input type="text" placeholder="Enter Username" name="uname" [(ngModel)]="uname" required>
 
-    <button type="submit" (click)="login()">Login</button>
+  <label for="pwr"><b>password</b></label>
+  <input type="password" placeholder="Enter password" name="pwr" [(ngModel)]="pwr" required>
 
-    
-      </div>
-      
+  <button type="submit" (click)="login()">Login</button>
+
+  <div [class]="divstatus ? 'show' : 'hide'">
+    <div [style.background-color]="status ? 'green' : 'red'">
+      <label style="color: white;"> {{ text }} </label>
+    </div>
+  </div>
+
+</div>
